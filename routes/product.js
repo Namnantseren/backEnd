@@ -21,9 +21,9 @@ Router.get("/products/limit", async (req, res) => {
   const result = await addLimit(givingLimit);
   res.status(200).send(result);
 });
-// Router.post("/product", async (req, res)=>{
-//   const products = await addProduct(req.body.product);
-//   console.log(products)
-// })
+Router.post("/product/add", async (req, res)=>{
+  const products = await addProduct(req.body.product);
+  console.log(products)
+})
 
 export default Router;

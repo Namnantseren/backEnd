@@ -1,7 +1,7 @@
 import { pool } from "../config/mysql-config.js"
 
 export async function addProduct(products) {
-    const [rows] = await products.map((product) => pool.query(`INSERT INTO product (brand_id, category_id, name,description, sale, price, stock, image,created_date) VALUES('${product.id}', '${product.category}','${product.name}', 'none','${product.sale}',${Number(product.price)},${Number(product.stock)},'none','2023-03-03')`))
+    const [rows] = await products.map((product) => pool.query(`INSERT INTO product (brand_id, category_id, name, sale, price, image, created_date) VALUES ('${product.id}', '${product.category}','${product.name}', 'none','${product.sale}',${Number(product.price)})`))
     return rows;
 }
 ``
